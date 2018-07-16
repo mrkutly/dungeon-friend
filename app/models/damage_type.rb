@@ -1,3 +1,4 @@
 class DamageType < ApplicationRecord
-  extend ApplicationHelper
+  extend ApplicationHelper::SeedMethods
+  include ApplicationHelper::InstanceMethods
 end

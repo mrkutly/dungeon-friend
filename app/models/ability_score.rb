@@ -1,3 +1,5 @@
 class AbilityScore < ApplicationRecord
   extend ApplicationHelper
-end  
+
+  has_many :ability_scores_characters
+end

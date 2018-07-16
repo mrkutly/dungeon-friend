@@ -1,3 +1,6 @@
 class Condition < ApplicationRecord
-  extend ApplicationHelper
+  extend ApplicationHelper::SeedMethods
+  include ApplicationHelper::InstanceMethods
+
+  has_many :characters_conditions
 end

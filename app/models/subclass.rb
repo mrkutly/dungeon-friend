@@ -1,3 +1,6 @@
 class Subclass < ApplicationRecord
-  extend ApplicationHelper
+  extend ApplicationHelper::SeedMethods
+  include ApplicationHelper::InstanceMethods
+
+  has_many :characters
 end
