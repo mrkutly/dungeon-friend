@@ -1,3 +1,3 @@
-class Race < ApplicationRecord
+class Job < ApplicationRecord
   extend ApplicationHelper
 end
