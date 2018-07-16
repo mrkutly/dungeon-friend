@@ -1,6 +1,7 @@
 module ApplicationHelper
 
   module SeedMethods
+
     def get_seed_response(plural_name)
       response = RestClient.get("http://dnd5eapi.co/api/#{plural_name}")
       return JSON.parse(response)
@@ -19,6 +20,7 @@ module ApplicationHelper
 
 
   module InstanceMethods
+    
     def data
       @response ||= RestClient.get(self.url)
       @data ||= JSON.parse(@response)
