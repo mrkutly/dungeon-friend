@@ -1,4 +1,6 @@
 class Character < ApplicationRecord
+  include ApplicationHelper::CharacterMethods
+  
   belongs_to :user
   belongs_to :race
   belongs_to :job
@@ -31,3 +33,25 @@ class Character < ApplicationRecord
   has_many :characters_skills
   has_many :skills, through: :characters_skills
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
