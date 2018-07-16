@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_135312) do
+ActiveRecord::Schema.define(version: 2018_07_16_143815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ability_scores", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
+  create_table "conditions", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
+  create_table "damage_types", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
 
   create_table "features", force: :cascade do |t|
     t.string "name"
@@ -25,7 +45,29 @@ ActiveRecord::Schema.define(version: 2018_07_16_135312) do
     t.string "url"
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
+  create_table "magic_schools", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "proficiencies", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
   create_table "races", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
+  create_table "skills", force: :cascade do |t|
     t.string "name"
     t.string "url"
   end
@@ -33,6 +75,24 @@ ActiveRecord::Schema.define(version: 2018_07_16_135312) do
   create_table "spells", force: :cascade do |t|
     t.string "name"
     t.string "url"
+  end
+
+  create_table "subclasses", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
+  create_table "subraces", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "user_name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
