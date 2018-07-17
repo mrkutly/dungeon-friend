@@ -27,6 +27,7 @@ module ApplicationHelper
     end
   end
 
+
   module CharacterMethods
 
     def starting_equipment
