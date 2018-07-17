@@ -15,7 +15,7 @@ module ApplicationHelper
           instance = self.create(attributes_hash)
         end
       end
-    end
+    end  
   end
 
 
