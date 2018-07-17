@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_07_16_165338) do
+=======
+ActiveRecord::Schema.define(version: 2018_07_17_110403) do
+>>>>>>> migrations
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_165338) do
     t.integer "subrace_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "level"
   end
 
   create_table "characters_conditions", force: :cascade do |t|
