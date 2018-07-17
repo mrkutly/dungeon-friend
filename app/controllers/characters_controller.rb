@@ -9,9 +9,10 @@ class CharactersController < ApplicationController
   end
 
   def create
-    args = [:user_id, :name, :job_id, :race_id, :magic_school_id, :subclass_id, :subrace_id, :level_id]
+    args = [:name, :job_id, :race_id, :magic_school_id, :subclass_id, :subrace_id, :level_id]
     @character = Character.new(character_params(*args))
-    byebug
+    @character.user_id = current_user.id
+    
     if @character.save
       redirect_to character_path(@character)
     else
