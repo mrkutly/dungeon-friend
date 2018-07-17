@@ -1,0 +1,12 @@
+<%= form_for @character do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :race_id %>
+  <%= f.collection_select :race_id, Race.all, :id, :name %>
+  <br>
+  <%= f.label :job_id, "Class" %>
+  <%= f.collection_select :job_id, Job.all, :id, :name %>
+  <br>
+  <%= f.submit %>
+<% end %>
