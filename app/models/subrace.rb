@@ -3,4 +3,5 @@ class Subrace < ApplicationRecord
   include ApplicationHelper::InstanceMethods
 
   has_many :characters
+  belongs_to :race
 end
