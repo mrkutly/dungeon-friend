@@ -1,7 +1,8 @@
 class CharactersController < ApplicationController
+  before_action :authorized
 
   def index
-    @characters = Character.all
+    @characters = Character.where(user_id: current_user.id)
   end
 
   def new
