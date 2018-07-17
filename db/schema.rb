@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_16_143815) do
+ActiveRecord::Schema.define(version: 2018_07_17_110403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,75 @@ ActiveRecord::Schema.define(version: 2018_07_16_143815) do
   create_table "ability_scores", force: :cascade do |t|
     t.string "name"
     t.string "url"
+  end
+
+  create_table "ability_scores_characters", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "ability_score_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "race_id"
+    t.integer "job_id"
+    t.string "name"
+    t.integer "magic_school_id"
+    t.integer "subclass_id"
+    t.integer "subrace_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "level"
+  end
+
+  create_table "characters_conditions", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "condition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_equipment", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "equipment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_features", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "feature_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_languages", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_proficiencies", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "proficiency_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_skills", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characters_spells", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "spell_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "conditions", force: :cascade do |t|
